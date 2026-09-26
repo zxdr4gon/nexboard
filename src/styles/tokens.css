@@ -1,0 +1,17 @@
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --ink-primary: #14141a;
+  --ink-secondary: #55555f;
+  --border: #dcdce2;
+  --accent: #3860ff;
+}
+
+:root[data-theme='dark'] {
+  --bg: #15151a;
+  --surface: #1d1d24;
+  --ink-primary: #f2f2f5;
+  --ink-secondary: #b6b6c1;
+  --border: #303039;
+  --accent: #7c9bff;
+}

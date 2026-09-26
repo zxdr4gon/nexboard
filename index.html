@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whiteboard</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="toolbar">
+        <div class="toolbar-group" role="group" aria-label="Tools">
+          <button data-tool="pen" class="tool-button is-active" aria-label="Pen">Pen</button>
+          <button data-tool="hand" class="tool-button" aria-label="Pan">Pan</button>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">Theme</button>
+      </header>
+      <main class="canvas-wrap">
+        <canvas id="whiteboard-canvas"></canvas>
+        <div class="hud">
+          <span id="hud-coords">x 0.0, y 0.0</span>
+          <span id="hud-zoom">100%</span>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
