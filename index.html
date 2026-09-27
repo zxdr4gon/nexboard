@@ -8,11 +8,28 @@
   <body>
     <div id="app">
       <header class="toolbar">
-        <div class="toolbar-group" role="group" aria-label="Tools">
-          <button data-tool="pen" class="tool-button is-active" aria-label="Pen">Pen</button>
+        <div class="toolbar-group" role="group" aria-label="Selection tools">
+          <button data-tool="select" class="tool-button is-active" aria-label="Select">Select</button>
+          <button data-tool="lasso" class="tool-button" aria-label="Lasso select">Lasso</button>
           <button data-tool="hand" class="tool-button" aria-label="Pan">Pan</button>
         </div>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">Theme</button>
+        <div class="toolbar-group" role="group" aria-label="Drawing tools">
+          <button data-tool="pen" class="tool-button" aria-label="Pen">Pen</button>
+          <button data-tool="rectangle" class="tool-button" aria-label="Rectangle">Rect</button>
+          <button data-tool="ellipse" class="tool-button" aria-label="Ellipse">Ellipse</button>
+          <button data-tool="triangle" class="tool-button" aria-label="Triangle">Triangle</button>
+          <button data-tool="line" class="tool-button" aria-label="Line">Line</button>
+          <button data-tool="arrow" class="tool-button" aria-label="Arrow">Arrow</button>
+          <button data-tool="polygon" class="tool-button" aria-label="Polygon">Polygon</button>
+        </div>
+        <div class="toolbar-group" role="group" aria-label="History">
+          <button id="undo-button" class="icon-button" aria-label="Undo" disabled>Undo</button>
+          <button id="redo-button" class="icon-button" aria-label="Redo" disabled>Redo</button>
+        </div>
+        <div class="toolbar-group toolbar-group--end" role="group" aria-label="View options">
+          <button id="snap-toggle" class="icon-button" aria-label="Toggle grid snap">Snap</button>
+          <button id="theme-toggle" class="icon-button" aria-label="Toggle theme">Theme</button>
+        </div>
       </header>
       <main class="canvas-wrap">
         <canvas id="whiteboard-canvas"></canvas>

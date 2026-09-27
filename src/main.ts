@@ -8,13 +8,16 @@ function bootstrap(): void {
   const hudCoords = document.getElementById('hud-coords');
   const hudZoom = document.getElementById('hud-zoom');
   const themeToggle = document.getElementById('theme-toggle') as HTMLButtonElement | null;
+  const snapToggle = document.getElementById('snap-toggle') as HTMLButtonElement | null;
+  const undoButton = document.getElementById('undo-button') as HTMLButtonElement | null;
+  const redoButton = document.getElementById('redo-button') as HTMLButtonElement | null;
   const toolButtons = document.querySelectorAll<HTMLButtonElement>('[data-tool]');
 
-  if (!canvas || !hudCoords || !hudZoom || !themeToggle) {
+  if (!canvas || !hudCoords || !hudZoom || !themeToggle || !snapToggle || !undoButton || !redoButton) {
     throw new Error('Required DOM elements are missing from index.html.');
   }
 
-  new App({ canvas, hudCoords, hudZoom, themeToggle, toolButtons });
+  new App({ canvas, hudCoords, hudZoom, themeToggle, snapToggle, undoButton, redoButton, toolButtons });
 }
 
 bootstrap();

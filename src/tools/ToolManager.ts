@@ -16,12 +16,11 @@ export class ToolManager {
     return tool;
   }
 
-  // NOTE: does not call the outgoing tool's cancel() — that needs a
-  // ToolContext, which ToolManager doesn't hold. Today this is harmless
-  // (PenTool/HandTool only hold local gesture state, cleared on their
-  // own pointerup), but once a tool's cancel() needs to touch the
-  // document (e.g. discarding a half-drawn shape), route tool switching
-  // through App so it can supply the context.
+  // Cancelling the outgoing tool's in-progress gesture needs a
+  // ToolContext, which ToolManager doesn't hold — App does this itself
+  // (active.cancel?.(ctx)) immediately before calling setActive(), so a
+  // half-drawn polygon or in-progress drag is discarded cleanly on
+  // every tool switch.
   setActive(id: ToolId): void {
     this.activeId = id;
   }
